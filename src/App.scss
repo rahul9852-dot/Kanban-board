@@ -1,0 +1,30 @@
+
+  
+  html, body{
+    background-color: #fff;
+  }
+  .mainContainer{
+    margin: 50px;
+    background-color: #fff;
+  }
+.header{
+  display: flex;
+  gap: 2px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100px;
+  margin-bottom: 8px;
+}
+
+.btnContainer{
+  border: none;
+  text-align: center;
+  line-height: 1rem;
+  letter-spacing: 0.5px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: bold;
+  font-weight: 500;
+
+}
