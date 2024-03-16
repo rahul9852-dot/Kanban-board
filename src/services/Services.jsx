@@ -3,7 +3,7 @@ import GroupingOptions from '../components/GroupingOptions';
 import SortingOptions from '../components/SortingOptions';
 import GroupedColumn from '../components/GroupedColumn';
 
-const Services = () => {
+const Services = ({displayOption}) => {
 
 
   const selectingOptions= {
@@ -13,9 +13,10 @@ const Services = () => {
     alignItems:'space-between',
     flexDirection: 'column',
     padding:'10px',
-    border: '1px solid #ddd',
+    border: '1px solid #f5f6f7',
     borderRadius:'8px',
-    boxShadow:'0 0 8px 0.5px #cbc8c8'
+    boxShadow:'0 0 8px 0.5px #f5f6f7',
+    marginBottom:'8px',
   };
 
   const groupKeyStyles = {
@@ -121,31 +122,37 @@ const sortedTickets = (grouped) => {
   const grouped = groupedTickets();
   const sorted = sortedTickets(grouped);
 
-  console.log("tickets", tickets, "users", users, "siorted", sorted)
   return (
-    <div className="kanban-board">
-      <div style={selectingOptions}>
-          <SortingOptions
-            sortingOption={sortingOption}
-            onSortingChange={handleSortingChange}
-          />
-          <GroupingOptions
-            groupingOption={groupingOption}
-            onGroupingChange={handleGroupingChange}
-          />
-      </div>
-
-      <div style={groupKeyStyles}>
-        {/* Render Grouped Columns */}
-        {Object.keys(sorted).map(groupKey => (
-          <GroupedColumn
-            key={groupKey}
-            groupKey={groupKey}
-            tickets={sorted[groupKey]}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      {displayOption && (
+        <div style={selectingOptions}>
+            <SortingOptions
+              sortingOption={sortingOption}
+              onSortingChange={handleSortingChange}
+            />
+            <GroupingOptions
+              groupingOption={groupingOption}
+              onGroupingChange={handleGroupingChange}
+            />
+        </div>
+      )}
+      <main>
+          <div className="kanban-board">
+          <div style={groupKeyStyles}>
+            {/* Render Grouped Columns */}
+            {Object.keys(sorted).map(groupKey => (
+              <GroupedColumn
+                key={groupKey}
+                groupKey={groupKey}
+                priority={sorted[groupKey].status}
+                tickets={sorted[groupKey]}
+              />
+            ))}
+          </div>
+        </div>
+      </main>
+    
+    </>
   )
 }
 

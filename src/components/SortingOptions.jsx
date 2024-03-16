@@ -6,7 +6,7 @@ const SortingOptions = ({ sortingOption, onSortingChange }) => {
     container:{
       display: 'flex',
       justifyContent:'space-between',
-      marginBottom:'8px'
+      marginBottom:'8px',
     },
 
     selectOption:{
