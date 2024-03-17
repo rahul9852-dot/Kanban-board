@@ -1,18 +1,7 @@
 import React from 'react'
 import TicketCard from './TicketCard';
 
-const GroupedColumn = ({key, groupKey, tickets, priority}) => {
-
-  console.log(key, groupKey, tickets, priority)
-  // const groupStyleColumn = {
-  //   display:'grid',
-  //   gridTemplateColumn:'repeat(auto-fill, minmax(250px, 1fr))',
-  //   gap:'10px',
-  // }
-  // const columnStyle = {
-  //   display: 'flex',
-  //   gridTemplateRows: 'auto',
-  // }
+const GroupedColumn = ({ groupKey, tickets, priority}) => {
 
   const statusStyle={
     display: 'flex',
@@ -57,12 +46,9 @@ const GroupedColumn = ({key, groupKey, tickets, priority}) => {
       )
     }
   }
-  
-  
 
   return (
-    <div id={key}>
-      
+    <div key={groupKey}>
           <h4 style={statusStyle}>
             {columnIcon(groupKey)}
             {groupKey}

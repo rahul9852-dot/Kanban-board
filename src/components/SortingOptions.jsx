@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "../App.scss";
 const SortingOptions = ({ sortingOption, onSortingChange }) => {
 
   const sortingOptionsStyles = {
@@ -14,6 +14,14 @@ const SortingOptions = ({ sortingOption, onSortingChange }) => {
       padding:'2px',
       border: '1px solid #ddd',
       borderRadius:'4px'
+    },
+
+    labelStyles:{
+      fontSize: "14px",
+      fontWeight: 700,
+      color: 'rgb(128, 125, 125)',
+      lineHeight: '1rem',
+      marginbottom: '12px'
     }
 
 
@@ -24,7 +32,7 @@ const SortingOptions = ({ sortingOption, onSortingChange }) => {
 
   return (
     <div style={sortingOptionsStyles.container}>
-      <label>Ordering</label>
+      <label  style={sortingOptionsStyles.labelStyles}>Ordering</label>
       <select style={sortingOptionsStyles.selectOption} value={sortingOption} onChange={handleSortingChange}>
         <option value="priority">Priority</option>
         <option value="title">Title</option>

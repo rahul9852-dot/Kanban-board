@@ -90,14 +90,6 @@ const TicketCard = ({ticket}) => {
     // }
   }
 
-  // const extras={
-  //   display: 'flex',
-  //   border:'1px solid #ddd',
-  //   borderRadius:'4px',
-  //   textAlign:'center',
-  //   padding:'2px'
-  // }
-
 
   function getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -123,10 +115,6 @@ const TicketCard = ({ticket}) => {
         <div style={tagStyles.profileIcon}>
           {ticket.userId}
         </div>
-        {/* <div style={tagStyles.profileCloseIcon}></div> */}
-
-
-
       </div>
       
   )

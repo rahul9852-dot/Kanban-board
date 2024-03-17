@@ -11,7 +11,6 @@ const App = () => {
 
   const handleOptionChange = () => {
     setDisplayOption((prevOption) => !prevOption);
-    console.log("clicked", displayOption)
   }
   
   return (

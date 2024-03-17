@@ -1,4 +1,3 @@
-// GroupingOptions.jsx
 import React from 'react';
 
 const GroupingOptions = ({ groupingOption, onGroupingChange }) => {
@@ -14,6 +13,13 @@ const GroupingOptions = ({ groupingOption, onGroupingChange }) => {
       padding:'2px',
       border: '1px solid #ddd',
       borderRadius:'4px'
+    },
+    labelStyles:{
+      fontSize: "14px",
+      fontWeight: 700,
+      color: 'rgb(128, 125, 125)',
+      lineHeight: '1rem',
+      marginbottom: '12px'
     }
   }
   const handleGroupingChange = (e) => {
@@ -22,7 +28,7 @@ const GroupingOptions = ({ groupingOption, onGroupingChange }) => {
 
   return (
     <div style={groupOptionStyles.groupOptionContainer}>
-      <label>Group By:</label>
+      <label style={groupOptionStyles.labelStyles}>Grouping</label>
       <select style={groupOptionStyles.selectOption} value={groupingOption} onChange={handleGroupingChange}>
         <option value="status">Status</option>
         <option value="user">User</option>
